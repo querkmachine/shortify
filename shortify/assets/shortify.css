@@ -118,8 +118,35 @@ ol {
 }
 
 .shortify-list li {
-  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  position: relative;
   word-break: break-all;
+}
+
+.shortify-list .delete {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.shortify-list li:hover .delete {
+  display: block;
+}
+
+.shortify-list .delete input {
+  border: none;
+  color: #e0e0df;
+  background: none;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 140%;
+  cursor: pointer;
+}
+
+.shortify-list .delete input:hover,
+.shortify-list .delete input:focus {
+  color: #565656;
 }
 
 /**

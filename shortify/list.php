@@ -15,6 +15,7 @@
     // print_r($row);
     $url = ROOT . "/" . $row['short'];
       $output .= '<li>';
+        $output .= '<form action="/delete" method="post" class="delete"><input type="hidden" name="id" value="' . $row['short'] . '"><input type="submit" value="&times;"></form>';
         $output .= '<h4><a href="' . $url . '">' . $url . '</a></h4>';
         if($row['isURL'] == 1):
           $output .= '<small><strong>URL:</strong> ' . $row['notshort'] . '</small>';

@@ -19,6 +19,9 @@
     case 'upload':
       require('shortify/upload.php');
       break;
+    case 'delete':
+      require('shortify/delete.php');
+      break;
     case 'list':
       require('shortify/list.php');
       break;
