@@ -26,8 +26,9 @@
     if(strlen($_POST['shortify_url']) > 0):
       $url_slug = (isset($_POST['shortify_short']) && strlen($_POST['shortify_short']) > 0) ? $_POST['shortify_short'] : generateNewSlug();
       $url_slug = validateSlug($url_slug);
-      $allow_me_to_introduce_myself = $connection->prepare("INSERT INTO main(short, notshort, isURL) VALUES (:short, :notshort, 1)");
-      $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $_POST['shortify_url']));
+      $about_me = Session::getUserData($_COOKIE["session"]);
+      $allow_me_to_introduce_myself = $connection->prepare("INSERT INTO main(short, notshort, isURL, user) VALUES (:short, :notshort, 1, :user_id)");
+      $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $_POST['shortify_url'], ":user_id" => $about_me['id']));
       $url_slug = ROOT . "/" . $url_slug;
 ?>
     <div class="nice-shiny-new-url">

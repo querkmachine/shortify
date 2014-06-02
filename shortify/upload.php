@@ -32,8 +32,9 @@
       $the_nsa_for_files = finfo_open(FILEINFO_MIME_TYPE);
       $file_type = finfo_file($the_nsa_for_files, $newbie_file['tmp_name']);
       move_uploaded_file($newbie_file['tmp_name'], $newbie_url);
-      $allow_me_to_introduce_myself = $connection->prepare("INSERT INTO main(short, notshort, isURL, filename, filetype) VALUES (:short, :notshort, 2, :filename, :filetype)");
-      $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $newbie_url, ":filename" => $newbie_file['name'], ":filetype" => $file_type));
+      $about_me = Session::getUserData($_COOKIE["session"]);
+      $allow_me_to_introduce_myself = $connection->prepare("INSERT INTO main(short, notshort, isURL, filename, filetype, user) VALUES (:short, :notshort, 2, :filename, :filetype, :user_id)");
+      $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $newbie_url, ":filename" => $newbie_file['name'], ":filetype" => $file_type, ":user_id" => $about_me['id']));
       $url_slug = ROOT . "/" . $url_slug;
 ?>
     <div class="nice-shiny-new-url">
