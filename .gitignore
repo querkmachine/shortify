@@ -1,0 +1,3 @@
+shortify/config.php
+stored/*
+!stored/.gitkeep

@@ -1,4 +1,4 @@
-shortify
+Shortify
 ========
 
-Self-hosted URL shortener and file host
+Super simple self-hosted URL shortener and file host. Inspired by [MaffC/Slurp](http://github.com/MaffC/Slurp).
