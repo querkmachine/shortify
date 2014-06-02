@@ -12,9 +12,9 @@
       $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $_POST['shortify_url'], ":user_id" => $about_me['id']));
       $url_slug = ROOT . "/" . $url_slug;
 ?>
-    <div class="nice-shiny-new-url">
+    <div class="nice-shiny-new-url" id="shortified">
       <h2>Here's your freshly shortified URL:</h2>
-      <input type="text" value="<?php echo $url_slug; ?>" readonly>
+      <input type="text" value="<?php echo $url_slug; ?>" readonly autofocus>
     </div>
 <?php
     else:
@@ -27,7 +27,7 @@
   endif;
 ?>
 
-    <form action="" method="post" class="form">
+    <form action="#shortified" method="post" class="form">
       <header class="form__header">
         <h1 class="form__title">Shorten URL</h1>
       </header>

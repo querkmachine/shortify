@@ -17,9 +17,9 @@
       $allow_me_to_introduce_myself->execute(array(":short" => $url_slug, ":notshort" => $newbie_url, ":filename" => $newbie_file['name'], ":filetype" => $file_type, ":user_id" => $about_me['id']));
       $url_slug = ROOT . "/" . $url_slug;
 ?>
-    <div class="nice-shiny-new-url" id="uploaded">
+    <div class="nice-shiny-new-url" id="shortified">
       <h2>Here's your newly uploaded file:</h2>
-      <input type="text" value="<?php echo $url_slug; ?>" readonly>
+      <input type="text" value="<?php echo $url_slug; ?>" readonly autofocus>
     </div>
 <?php
     else:
@@ -32,7 +32,7 @@
   endif;
 ?>
 
-    <form action="#uploaded" method="post" enctype="multipart/form-data" class="form">
+    <form action="#shortified" method="post" enctype="multipart/form-data" class="form">
       <header class="form__header">
         <h1 class="form__title">Upload File</h1>
         <p><small>Max upload size: <?php echo ini_get('upload_max_filesize'); ?>B</small></p>
