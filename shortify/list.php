@@ -2,7 +2,9 @@
   if(!defined('TOTES_VALID_LOADING_HERE')) { exit; }
   if(!Session::isLoggedIn()) { die(header("Location: /login")); } 
   require 'parts/header.php';
-  $one_list_to_rule_them_all = $connection->query("SELECT * FROM main");
+  $about_me = Session::getUserData($_COOKIE["session"]);
+  $one_list_to_rule_them_all = $connection->prepare("SELECT * FROM main WHERE user = :user_id");
+  $one_list_to_rule_them_all->execute(array(":user_id" => $about_me['id']));
 ?>
 
     <h1>List All</h1>
