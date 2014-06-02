@@ -2,26 +2,7 @@
   if(!defined('TOTES_VALID_LOADING_HERE')) { exit; }
   if(!Session::isLoggedIn()) { die(header("Location: /login")); } 
   require 'parts/header.php';
-?>
 
-    <form action="" method="post" class="form">
-      <header class="form__header">
-        <h1 class="form__title">Shorten URL</h1>
-      </header>
-      <div class="form__row">
-        <label for="shortify_url">URL</label>
-        <input type="url" name="shortify_url" id="shortify_url" value="http://" required>
-      </div>
-      <div class="form__row">
-        <label for="shortify_url">Shortcode (optional)</label>
-        <input type="text" name="shortify_short" id="shortify_short" maxlength="50">
-      </div>
-      <div class="form__row form__row--no-label">
-        <input type="submit" value="Shortify!">
-      </div>
-    </form>
-
-<?php
   if(isset($_POST['shortify_url'])):
     if(strlen($_POST['shortify_url']) > 0):
       $url_slug = (isset($_POST['shortify_short']) && strlen($_POST['shortify_short']) > 0) ? $_POST['shortify_short'] : generateNewSlug();
@@ -44,6 +25,25 @@
 <?php
     endif;
   endif;
+?>
 
+    <form action="" method="post" class="form">
+      <header class="form__header">
+        <h1 class="form__title">Shorten URL</h1>
+      </header>
+      <div class="form__row">
+        <label for="shortify_url">URL</label>
+        <input type="url" name="shortify_url" id="shortify_url" value="http://" required>
+      </div>
+      <div class="form__row">
+        <label for="shortify_short">Shortcode (optional)</label>
+        <input type="text" name="shortify_short" id="shortify_short" maxlength="50">
+      </div>
+      <div class="form__row form__row--no-label">
+        <input type="submit" value="Shortify!">
+      </div>
+    </form>
+
+<?php
   require 'parts/footer.php';
 ?>

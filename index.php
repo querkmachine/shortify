@@ -8,7 +8,7 @@
 
   switch($query) {
     case false:
-      die("no url");
+      die(header("Location: http://greysadventures.com/"));
       break;
     case 'login':
       require('shortify/user.php');

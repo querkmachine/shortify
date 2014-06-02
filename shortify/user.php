@@ -10,6 +10,7 @@
   }
   else {
     Session::logOut($_COOKIE["session"]);
+    die(header("Location: /login"));
   }
   require 'parts/header.php';
 ?>

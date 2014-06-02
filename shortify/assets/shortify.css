@@ -1,0 +1,179 @@
+/**
+ * SHORTIFY!
+ * A super basic URL shortener/file hosting thing.
+ * @author Grey Hargreaves
+ * @url http://greysadventures.com/
+ */
+
+/**
+ * COLOURS
+ * White: #fffffd
+ * Black: #404045
+ * Light Grey: #e0e0df;
+ * Dark Grey: #565656
+ * Red: #f15c43
+ * Green: #74c595
+ * Yellow: #fde713
+ */
+
+@import url('//fonts.googleapis.com/css?family=Oxygen:300,700');
+
+/**
+ * GLOBAL JUNK */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #404045;
+  background-color: #fffffd;
+  font-family: Oxygen, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: #f15c43;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+p, 
+ul,
+ol {
+  margin: 1rem 0;
+}
+
+/**
+ * ALL THE FORMS WERE FORMED THIS WAY */
+
+.form {
+
+}
+
+.form .form__row {
+  margin: 1rem 0;
+}
+
+.form label {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  background-color: #e0e0df;
+  font-size: smaller;
+}
+
+.form input[type='text'],
+.form input[type='password'],
+.form input[type='url'],
+.form input[type='file'] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0df;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.form input[type='submit'] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0df;
+  background-color: #e0e0df;
+  font-size: inherit;
+  font-weight: 900;
+}
+
+.form input[type='submit']:hover,
+.form input[type='submit']:focus {
+  border-color: #74c595;
+  background-color: #74c595;
+  cursor: pointer;
+}
+
+/**
+ * ERRORS, SON */
+
+.error {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  color: #fffffd;
+  background-color: #f15c43;
+  font-weight: 900;
+  text-align: center;
+}
+
+/**
+ * LISTS GLORIOUS LISTS */
+
+.shortify-list {
+  list-style: none;
+}
+
+.shortify-list li {
+  margin: 0.5rem 0;
+  word-break: break-all;
+}
+
+/**
+ * MASTHEAD OF THE HOUSE */
+
+.header {
+  padding: 0.5rem;
+  background-color: #565656;
+}
+
+.navigation {
+  color: #fffffd;
+  overflow: hidden;
+}
+
+.navigation .navigation__inner,
+.navigation .navigation__outer {
+  margin: 0;
+  list-style: none;
+}
+
+.navigation a,
+.navigation strong {
+  display: block;
+  padding: 0.5rem;
+}
+
+/**
+ * YOU THE MAIN */
+
+.main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nice-shiny-new-url input {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  background-color: #fde713;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+
+.navigation .navigation__inner { float: left; }
+.navigation .navigation__outer { float: right; }
+
+.navigation li {
+  display: inline-block;
+}
+
+}
