@@ -79,6 +79,7 @@ ol {
   background: none;
   font-family: inherit;
   font-size: inherit;
+  -webkit-appearance: none;
 }
 
 .form input[type='submit'] {
@@ -89,6 +90,7 @@ ol {
   background-color: #e0e0df;
   font-size: inherit;
   font-weight: 900;
+  -webkit-appearance: none;
 }
 
 .form input[type='submit']:hover,
